@@ -3,14 +3,14 @@ import {
   ChakraProvider,
   Box,
   Text,
-  Link,
   VStack,
   Code,
   Grid,
   theme,
+  Flex,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { Dropzone } from './components/Dropzone';
 
 function App() {
   return (
@@ -19,19 +19,14 @@ function App() {
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
+            <Flex width="20em" height="10em">
+              <Dropzone>
+                <Text color="gray.500">Click here or drop files to upload</Text>
+              </Dropzone>
+            </Flex>
             <Text>
               Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
             </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
           </VStack>
         </Grid>
       </Box>
